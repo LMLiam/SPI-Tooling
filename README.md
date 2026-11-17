@@ -3,7 +3,7 @@
 
 [![Annotations Maven Central](https://img.shields.io/maven-central/v/io.github.eventhorizonlab/spi-tooling-annotations?color=blue)](https://central.sonatype.com/artifact/io.github.eventhorizonlab/spi-tooling-annotations)
 [![Processor Maven Central](https://img.shields.io/maven-central/v/io.github.eventhorizonlab/spi-tooling-processor?color=blue)](https://central.sonatype.com/artifact/io.github.eventhorizonlab/spi-tooling-processor) 
-[![Build](https://github.com/EventHorizonLab/SPI-Tooling/actions/workflows/release-and-publish.yml/badge.svg)](https://github.com/EventHorizonLab/SPI-Tooling/actions)  
+[![Build](https://github.com/LMLiam/SPI-Tooling/actions/workflows/release-and-publish.yml/badge.svg)](https://github.com/LMLiam/SPI-Tooling/actions)  
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
@@ -145,7 +145,7 @@ Run tests locally:
 
 ## Clone & Build
 ```bash
-git clone https://github.com/EventHorizonLab/SPI-Tooling.git
+git clone https://github.com/LMLiam/SPI-Tooling.git
 cd SPI-Tooling
 ./gradlew build
 ```

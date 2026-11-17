@@ -34,7 +34,7 @@ subprojects {
         pom {
             name = "${rootProject.name}-${project.name}"
             description = "A module of the ${rootProject.name} project."
-            url = "https://github.com/EventHorizonLab/SPI-Tooling"
+            url = "https://github.com/LMLiam/SPI-Tooling"
             licenses {
                 license {
                     name = "MIT License"
@@ -49,9 +49,9 @@ subprojects {
                 }
             }
             scm {
-                url = "https://github.com/EventHorizonLab/SPI-Tooling"
-                connection = "scm:git:https://github.com/EventHorizonLab/SPI-Tooling.git"
-                developerConnection = "scm:git:ssh://git@github.com:EventHorizonLab/SPI-Tooling.git"
+                url = "https://github.com/LMLiam/SPI-Tooling"
+                connection = "scm:git:https://github.com/LMLiam/SPI-Tooling.git"
+                developerConnection = "scm:git:ssh://git@github.com:LMLiam/SPI-Tooling.git"
             }
         }
     }
@@ -61,7 +61,7 @@ subprojects {
         repositories {
             maven {
                 name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/EventHorizonLab/SPI-Tooling")
+                url = uri("https://maven.pkg.github.com/LMLiam/SPI-Tooling")
                 credentials {
                     username = findProperty('gprUser') ?: System.getenv('GITHUB_ACTOR')
                     password = findProperty('gprToken') ?: System.getenv('GITHUB_TOKEN')
