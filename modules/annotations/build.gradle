@@ -1,10 +1,10 @@
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(24)
+        languageVersion = JavaLanguageVersion.of(25)
     }
     withSourcesJar()
 }
 
 kotlin {
-    jvmToolchain(24)
+    jvmToolchain(25)
 }

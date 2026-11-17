@@ -1,17 +1,14 @@
 plugins {
     id 'base'
-    id 'org.jetbrains.kotlin.jvm' version '2.2.0'
-    id 'org.jetbrains.kotlin.kapt' version '2.2.0'
-    id "com.vanniktech.maven.publish" version "0.34.0"
+    id 'org.jetbrains.kotlin.jvm' version '2.4.21'
+    id 'org.jetbrains.kotlin.kapt' version '2.4.21'
+    id "com.vanniktech.maven.publish" version "0.37.0"
 }
 
 allprojects {
     group = findProperty('group') as String
-    if (hasProperty("version")) {
-        version = findProperty('version') as String
-    } else {
-        version = findProperty('baseVersion') as String
-    }
+    // -Pversion (CI snapshots and releases) overrides baseVersion.
+    version = providers.gradleProperty('version').orElse(providers.gradleProperty('baseVersion')).get()
     repositories {
         mavenCentral()
     }
