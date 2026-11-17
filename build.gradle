@@ -7,11 +7,8 @@ plugins {
 
 allprojects {
     group = findProperty('group') as String
-    if (hasProperty("version")) {
-        version = findProperty('version') as String
-    } else {
-        version = findProperty('baseVersion') as String
-    }
+    // -Pversion (CI snapshots and releases) overrides baseVersion.
+    version = providers.gradleProperty('version').orElse(providers.gradleProperty('baseVersion')).get()
     repositories {
         mavenCentral()
     }
