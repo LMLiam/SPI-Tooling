@@ -1,17 +1,21 @@
 plugins {
-    id 'io.kotest' version '6.0.1'
+    id 'io.kotest' version '6.2.7'
+}
+
+kotest {
+    customGradleTask = true
 }
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(24)
+        languageVersion = JavaLanguageVersion.of(25)
     }
     withSourcesJar()
 }
 
 
 kotlin {
-    jvmToolchain(24)
+    jvmToolchain(25)
 }
 
 configurations {
@@ -26,9 +30,9 @@ dependencies {
     kapt 'com.google.auto.service:auto-service:1.1.1'
 
     testRuntimeOnly project(':annotations')
-    testImplementation 'io.kotest:kotest-framework-engine:6.0.1'
-    testImplementation 'io.kotest:kotest-assertions-core:6.0.1'
-    testImplementation "dev.zacsweers.kctfork:core:0.8.0"
+    testImplementation 'io.kotest:kotest-framework-engine:6.2.7'
+    testImplementation 'io.kotest:kotest-assertions-core:6.2.7'
+    testImplementation "dev.zacsweers.kctfork:core:0.14.0"
     testImplementation "io.mockk:mockk:1.14.5"
 }
 
@@ -47,6 +51,8 @@ var args = [
 
 tasks.withType(Test).configureEach {
     jvmArgs(args)
+    // Kotest specs run through the kotest task, so Gradle 9 must not fail the JUnit test task for finding none.
+    failOnNoDiscoveredTests = false
 }
 
 tasks.named('jvmKotest') {
