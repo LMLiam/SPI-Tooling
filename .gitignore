@@ -40,3 +40,5 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+# graphify knowledge graph, rebuilt locally by its git hooks
+graphify-out/
